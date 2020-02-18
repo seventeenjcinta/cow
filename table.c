@@ -9,7 +9,6 @@ struct Node
     void *value;
     struct Node* next;
     void *prevtop;
-    
 };
 
 struct HashTable
@@ -18,7 +17,7 @@ struct HashTable
     void *top;
 };
 
-struct Node *newNode(void *key, void *value, struct Node* next, void *prevtop)
+static struct Node *newNode(void *key, void *value, struct Node* next, void *prevtop)
 {
     struct Node* node;
 
@@ -79,7 +78,7 @@ void *HashTableFind(struct HashTable *table, void *key)
 }
      
 // 删除最新插入的元素
-struct Node *HashTableDel(struct HashTable *table)
+struct Node *HashTablePop(struct HashTable *table)
 {
     int index;
     void *temp;
@@ -126,10 +125,10 @@ void HashTableClear(struct HashTable *table)
 {
     struct Node *node;
 
-    node = HashTableDel(table);
+    node = HashTablePop(table);
     while(node != NULL) {
         free(node);
-        node = HashTableDel(table);
+        node = HashTablePop(table);
     }
 }
 

@@ -1,3 +1,5 @@
+// 哈希表
+
 // 创建哈希表
 struct HashTable *HashTableTCreate();
   
@@ -8,7 +10,7 @@ void HashTableInsert(struct HashTable *table, void *key, void * value);
 void *HashTableFind(struct HashTable *table, void *key);
      
 // 删除最新插入的元素
-struct Node *HashTableDel(struct HashTable *table);
+struct Node *HashTablePop(struct HashTable *table);
       
 // 清空哈希表
 void HashTableClear(struct HashTable *table);
