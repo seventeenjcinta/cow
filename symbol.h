@@ -21,4 +21,6 @@ void SymbolClear(struct HashTable *table);
 // 重初始化符号表，不断 pop 直到只剩下 firstSymbol（通过比较地址判断是否为 firstSymbol）
 void SymbolReinit(struct HashTable *table);
 
+char *SymbolGetName(struct Symbol *simbol);
+
 void SymbolCallBack(struct HashTable *table, void (*f)(struct Symbol *key, void *value));

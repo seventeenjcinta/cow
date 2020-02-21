@@ -104,3 +104,8 @@ void SymbolCallBack(struct HashTable *table, void (*f)(struct Symbol *key, void 
 {
     HashTableCallBack(table, (void (*)(void *, void *)) f);
 }
+
+char *SymbolGetName(struct Symbol *symbol)
+{
+    return symbol -> name;
+}
